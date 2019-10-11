@@ -6,7 +6,6 @@
 // Nicknames property with an array value. Array contains strings.
 // Age property with an integer value
 
-
 const myPet = {
   name: "Laika",
   species: "Dog",
@@ -21,8 +20,21 @@ const myPet = {
   },
   pant: function () {
     window.alert("Foooooooof.....");
+  },
+      // edited from here for part 3
+  favoriteToys: [],
+  play: function (toy) {
+    let rnd = Math.floor(Math.random() * Math.floor(2));
+    //testing the rnd
+    console.log(rnd);
+    if (rnd === 0) //disliked the toy 
+    {
+      console.log ("Disliked");
+    } else { // liked the toy
+      this.favoriteToys.push(toy);
+    }
   }
-}
+};
 
 // Now that you have an object that represents your pet, it's time to add some behavior. Pick three behaviors that your pet has and add three kys to your pet object. Each key's value should be a function that logs to the console or displays a window alert. Your choice.
 
@@ -34,6 +46,9 @@ const myPet = {
 // angus.whine()
 // angus.pant()
 
-myPet.bark();
-myPet.whine();
-myPet.pant();
+// myPet.bark();
+// myPet.whine();
+// myPet.pant();
+
+myPet.play("Squeeky Toy");
+console.log(myPet.favoriteToys);
